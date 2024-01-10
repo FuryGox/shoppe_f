@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shoppe_f/constants.dart';
+import 'package:shoppe_f/screen/Product/product_main.dart';
 import 'package:shoppe_f/screen/home/home_screen.dart';
 
 void main() {
@@ -21,24 +22,28 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: HomePage(),
+      routes: {
+        '/home': (context) => HomePage(),
+
+      },
     );
   }
 }
 
 
-class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const MyAppBar();
+class MyAppBar_Home extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+
       backgroundColor: const Color(0xFFee4d2d),
       foregroundColor: const Color(0xFFee4d2d),
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset("assets/icon/square-ellipsis.svg",color: Colors.white,) ,
         onPressed: () {
-
+          Scaffold.of(context).openDrawer();
         },
       ),
       title: Container(
@@ -81,6 +86,59 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
 }
 
+class MyAppBar_Page extends StatelessWidget implements PreferredSizeWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      backgroundColor: const Color(0xFFee4d2d),
+      foregroundColor: const Color(0xFFee4d2d),
+      elevation: 0,
+      leading: IconButton(
+        icon: SvgPicture.asset("assets/icon/angle-left.svg",color: Colors.white,) ,
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      ),
+      title: Container(
+        height: 50,
+        margin: EdgeInsets.only(top: 20,bottom: 15),
+        child: TextField(
+          textAlignVertical: TextAlignVertical.center,
+          decoration: InputDecoration(
+            hintText: 'Search',
+            filled: true,
+            fillColor: Colors.white, // Set your desired background color
+            border: OutlineInputBorder(),
+          ),
+          onChanged: (value) {
+            // Handle search input
+          },
+        ),
+      ),
+
+
+      actions: <Widget>[
+
+        IconButton(
+          onPressed: () {  },
+          icon: SvgPicture.asset("assets/icon/search.svg",
+            color: Colors.white,
+          ),
+        ),
+        IconButton(
+          onPressed: () {  },
+          icon: SvgPicture.asset("assets/icon/cart-minus.svg",
+            color: Colors.white,
+          ),
+        ),
+      ],
+    );
+  }
+
+  @override
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+}
 
 class MyBottomNavBar extends StatelessWidget {
   final int currentIndex;

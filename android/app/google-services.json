@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "51049105433",
+    "project_id": "shoppef-76aba",
+    "storage_bucket": "shoppef-76aba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51049105433:android:fabdce1ec985754a870288",
+        "android_client_info": {
+          "package_name": "com.tungduong.shoppe_f"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_nAPrr520aoIiEtdE1y_wML8PKVdTseI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
