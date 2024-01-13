@@ -246,7 +246,7 @@ class cart_list_item extends State<item_cart>{
                 Container(
                   child: Row(
                     children: [
-                      Image.asset(Product_item.image[0], height: 100,),
+                      Image.asset(Product_item.image[0], width: 80,),
                       Padding(
                         padding: const EdgeInsets.only(left: 5),
                         child: Column(
@@ -283,8 +283,8 @@ class cart_list_item extends State<item_cart>{
                      children: [
                        Container(
                           margin: EdgeInsets.only(right: 10),
-                          width: 75,
-                          height: 30,
+                          width: 80,
+                          height: 40,
                           padding: EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             border: Border.all(color: Colors.black ,style: BorderStyle.solid,width: 1),
@@ -294,7 +294,10 @@ class cart_list_item extends State<item_cart>{
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               GestureDetector(
-                                child: SvgPicture.asset('assets/icon/minus.svg',width: 15,),
+                                child: Container(
+                                  padding: EdgeInsets.all(5),
+                                  child: SvgPicture.asset('assets/icon/minus.svg',width: 15,),
+                                ),
                                 onTap: (){
                                   setState(() {
                                     if (item.quantity > 1){
@@ -303,22 +306,29 @@ class cart_list_item extends State<item_cart>{
                                     }
                                   });
                                 },
+
                               ),
                               Container(
+                                  margin: EdgeInsets.symmetric(horizontal: 5),
                                   child: Text(
                                       item.quantity.toString(),
                                       style: TextStyle()
                                   )
                               ),
                               GestureDetector(
-                                child: SvgPicture.asset('assets/icon/plus.svg',width: 15,),
+                                child: Container(
+                                  padding: EdgeInsets.all(5),
+                                  child: SvgPicture.asset('assets/icon/plus.svg',width: 15,),
+                                ),
                                 onTap: (){
-                                  setState(() {
-                                    item.quantity++;
-                                    cart_data.updateQuantity(index_at);
-                                  });
+                                    setState(() {
+                                      item.quantity++;
+                                      cart_data.updateQuantity(index_at);
+                                    });
                                 },
+
                               ),
+
                             ],
                           ),
                         ),
