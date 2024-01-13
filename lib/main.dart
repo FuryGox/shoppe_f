@@ -1,34 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shoppe_f/constants.dart';
-import 'package:shoppe_f/screen/Product/product_main.dart';
+import 'package:provider/provider.dart';
+import 'package:shoppe_f/data.dart';
+import 'package:shoppe_f/screen/cart/cart_main.dart';
+import 'package:shoppe_f/screen/favorite/favorite_main.dart';
 import 'package:shoppe_f/screen/home/home_screen.dart';
+import 'package:shoppe_f/screen/receipt/receipt_list.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  data item_cart_data = data();
+  MyApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFee4d2d)),
-        useMaterial3: true,
+    return ChangeNotifierProvider(
+      create: (context) => data(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        home: HomePage(),
+        routes: {
+          '/home': (context) => HomePage(),
+          '/cart': (context) => cart_main(),
+          '/receipt': (context) => ReceiptItemCard(),
+          '/favorite': (context) => favorite_main(),
+        },
       ),
-      home: HomePage(),
-      routes: {
-        '/home': (context) => HomePage(),
-
-      },
     );
   }
 }
+
 
 
 class MyAppBar_Home extends StatelessWidget implements PreferredSizeWidget {
@@ -43,12 +49,12 @@ class MyAppBar_Home extends StatelessWidget implements PreferredSizeWidget {
       leading: IconButton(
         icon: SvgPicture.asset("assets/icon/square-ellipsis.svg",color: Colors.white,) ,
         onPressed: () {
-          Scaffold.of(context).openDrawer();
+          
         },
       ),
       title: Container(
         height: 50,
-        margin: EdgeInsets.only(top: 20,bottom: 15),
+        margin: const EdgeInsets.only(top: 20,bottom: 15),
         child: TextField(
             textAlignVertical: TextAlignVertical.center,
             decoration: InputDecoration(
@@ -58,7 +64,7 @@ class MyAppBar_Home extends StatelessWidget implements PreferredSizeWidget {
               border: OutlineInputBorder(),
             ),
             onChanged: (value) {
-              // Handle search input
+
             },
           ),
         ),
@@ -73,7 +79,9 @@ class MyAppBar_Home extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
         IconButton(
-          onPressed: () {  },
+          onPressed: () {
+            Navigator.pushNamed(context, '/cart');
+          },
           icon: SvgPicture.asset("assets/icon/cart-minus.svg",
             color: Colors.white,
           ),
@@ -84,6 +92,7 @@ class MyAppBar_Home extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
+
 }
 
 class MyAppBar_Page extends StatelessWidget implements PreferredSizeWidget {
@@ -127,7 +136,9 @@ class MyAppBar_Page extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
         IconButton(
-          onPressed: () {  },
+          onPressed: () {
+            Navigator.pushNamed(context, '/cart');
+          },
           icon: SvgPicture.asset("assets/icon/cart-minus.svg",
             color: Colors.white,
           ),
@@ -150,8 +161,8 @@ class MyBottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       currentIndex: currentIndex,
-      selectedItemColor: Colors.black,
-      unselectedItemColor: Colors.red,
+      selectedItemColor: Colors.deepOrangeAccent,
+      unselectedItemColor: Colors.black,
 
       onTap: onTap,
       items: [
@@ -171,12 +182,21 @@ class MyBottomNavBar extends StatelessWidget {
           label: 'Favorites',
 
         ),
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset("assets/icon/user.svg",color: Colors.black,),
-          label: 'Profile',
 
-        ),
       ],
     );
   }
+}
+
+class backbutton extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: SvgPicture.asset("assets/icon/angle-left.svg",color: Colors.white,) ,
+      onPressed: () {
+        Navigator.pop(context);
+      },
+    );
+  }
+
 }

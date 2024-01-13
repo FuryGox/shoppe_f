@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:shoppe_f/constants.dart';
 import 'package:shoppe_f/screen/home/list_item.dart';
-
+import 'package:shoppe_f/data.dart';
 import 'package:shoppe_f/main.dart';
 import 'package:shoppe_f/screen/Product/product.dart';
 import 'package:shoppe_f/screen/Product/product_main.dart';
@@ -11,14 +11,24 @@ class HomePage extends StatefulWidget {
   @override
   home_screen createState() => home_screen();
 }
-List<Adbanner_data> adbanner_data = data_template().ad_data;
+
+
 class home_screen extends  State<HomePage> {
 
   int selectedIndex = 0;
-  List<product_card> dataCard = data_template().itemCardList;
+  List<product_card> dataCard = data().itemProductList.map((product){
+    return product_card(
+      id: product.id,
+      imageUrl: product.image[0],
+      title: product.name,
+      price: product.price.toString(),
+      rating: product.ratting.toString(),
+    );
+  }).toList();
+  List<category_base> category = data().category;
 
-  List<Adbanner_content> adbanner_slider = adbanner_data.map((e){
-    return Adbanner_content(data: e,);
+  List<Adbanner_content> adbanner_slider = data().getAdbanner().map((e){
+    return Adbanner_content(addata: e,);
   }).toList();
 
   void changePage(index){
@@ -27,9 +37,11 @@ class home_screen extends  State<HomePage> {
         Navigator.pushNamed(context, '/home');
         break;
       case 1:
-        Navigator.pushNamed(context, '/home');
-        break;  
-    };
+        Navigator.pushNamed(context, '/receipt');
+        break;
+      case 2:
+        Navigator.pushNamed(context, '/favorite');
+    }
   }
 
   @override
@@ -55,18 +67,31 @@ class home_screen extends  State<HomePage> {
                 items: adbanner_slider,
               ),
             ),
-
             Container(
-              margin: EdgeInsets.all(kItemContainerMargin),
-              child: Text(
-                      "Recommend for you !",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 24.0,
-                        fontWeight: FontWeight.bold,
-                      ),
+              margin: EdgeInsets.only(top: 5),
+              height: 75,
+              decoration: BoxDecoration(
+                border: horizontal_bar,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemExtent: 100,
+                            itemCount: category.length,
+                            itemBuilder: (context, index)  => category_wigget(category: category[index])
+                          ),
+                        ),
+                  ),
+                ],
               ),
             ),
+
+
             Expanded(
                 child: ListView.builder(
                     scrollDirection: Axis.vertical,
@@ -77,7 +102,7 @@ class home_screen extends  State<HomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => product_item(item: data_template().get_product_by_id(dataCard[index].id)),
+                              builder: (context) => product_item(item: data().get_product_by_id(dataCard[index].id)),
                           ),
                         )
                       } ,
@@ -86,18 +111,6 @@ class home_screen extends  State<HomePage> {
             ),
 
           ],
-      ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            ListTile(
-              title: Text('HangA'),
-            ),
-            ListTile(
-              title: Text('HangB'),
-            ),
-          ],
-        ),
       ),
 
       bottomNavigationBar: MyBottomNavBar(

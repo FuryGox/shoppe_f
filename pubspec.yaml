@@ -37,6 +37,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.9
   carousel_slider: ^4.0.0
+  provider: ^6.1.1
+  sqflite: ^2.3.0
+  path_provider: ^2.1.2
+  slide_to_act: ^2.0.2
+  like_button: ^2.0.5
 
 dev_dependencies:
   flutter_test:
@@ -57,6 +62,31 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/images/beautify/b1/
+    - assets/images/beautify/b2/
+    - assets/images/beautify/b3/
+    - assets/images/beautify/b4/
+    - assets/images/beautify/b5/
+    - assets/images/electronic device/e1/
+    - assets/images/electronic device/e2/
+    - assets/images/electronic device/e3/
+    - assets/images/electronic device/e4/
+    - assets/images/electronic device/e5/
+    - assets/images/fashion/f1/
+    - assets/images/fashion/f2/
+    - assets/images/fashion/f3/
+    - assets/images/fashion/f4/
+    - assets/images/fashion/f5/
+    - assets/images/healthcare/h1/
+    - assets/images/healthcare/h2/
+    - assets/images/healthcare/h3/
+    - assets/images/healthcare/h4/
+    - assets/images/healthcare/h5/
+    - assets/images/tool/t1/
+    - assets/images/tool/t2/
+    - assets/images/tool/t3/
+    - assets/images/tool/t4/
+    - assets/images/tool/t5/
     - assets/icon/
 
   # The following line ensures that the Material Icons font is
