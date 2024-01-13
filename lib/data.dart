@@ -67,7 +67,8 @@ class data extends ChangeNotifier {
         ],
         ratting: 5.0,
         number_of_ratting: 20,
-        price: 300000,  
+        price: 75000
+      ,
     ),
     Product(
       id: 'id2',
@@ -89,7 +90,7 @@ class data extends ChangeNotifier {
       ],
       ratting: 5.0,
       number_of_ratting: 33,
-      price: 300000,  
+      price: 350000,
     ),
     Product(
       id: 'id3',
@@ -122,11 +123,11 @@ class data extends ChangeNotifier {
       ],
       ratting: 4.9,
       number_of_ratting: 593,
-      price: 300000,  
+      price: 269000,
     ),
     Product(
       id: 'id4',
-      name: 'Phấn nước Whoo Radiant Essence Cushion SPF50+/PA+++  ',
+      name: 'Phấn nước tái sinh chống nhăn chống nắng siêu mịn chiếc xuất vàng 24k Whoo Radiant Essence Cushion SPF50+/PA+++ ',
       category_id: 'beautify',
       detail: """
         Phấn nước Whoo Radiant Essence Cushion SPF50+/PA+++ 
@@ -150,11 +151,11 @@ class data extends ChangeNotifier {
         ],
       ratting: 4.3,
       number_of_ratting: 53,
-      price: 300000,  
+      price: 2300000,
     ),
     Product(
       id: 'id5',
-      name: 'Phấn nước Whoo Radiant Essence Cushion SPF50+/PA+++  ',
+      name: 'SON KEM LÌ PERIPERA INK VELVET',
       category_id: 'beautify',
       detail: """
         [HOT NEW ARRIVAL] SON KEM LÌ PERIPERA INK VELVET PHIÊN BẢN 2019 10 MÀU MỚI SIÊU HOT CÙNG VỚI THIẾT KẾ ĐỔI MỚI HOÀN THIỆN VÀ CHẤT SON ĐỈNH CAO HƠN PHIÊN BẢN CŨ
@@ -191,7 +192,7 @@ class data extends ChangeNotifier {
       ],
       ratting: 4.0,
       number_of_ratting: 628 ,
-      price: 300000,  
+      price: 138000,
     ),
     Product(
       id: 'id6',
@@ -233,7 +234,7 @@ class data extends ChangeNotifier {
       ],
       ratting: 4.0,
       number_of_ratting: 163,
-      price: 300000,  
+      price: 95000,
     ),
     Product(
       id: 'id7',
@@ -280,11 +281,11 @@ class data extends ChangeNotifier {
       ],
       ratting: 5.0,
       number_of_ratting: 5,
-      price: 300000,  
+      price: 45000,
     ),
     Product(
       id: 'id8',
-      name: 'laptop 100_ mới Intel Celeron J4125 RAM 12GB SSD 512GB Windows 10PRO Bảo Hành 2 Năm laptop gaming giá rẻ cho học',
+      name: 'laptop 100\% mới Intel Celeron J4125 RAM 12GB SSD 512GB Windows 10PRO Bảo Hành 2 Năm laptop gaming giá rẻ cho học',
       category_id: 'electronic',
       detail: """
         laptop hp factory 100% mới Intel Celeron J4125 RAM 12GB SSD 512GB Windows 10PRO Bảo Hành 2 Năm laptop gaming giá rẻ cho học sinh
@@ -318,7 +319,7 @@ class data extends ChangeNotifier {
 
       ratting: 5.0,
       number_of_ratting: 3,
-      price: 300000,  
+      price: 10000000,
     ),
     Product(
       id: 'id9',
@@ -385,7 +386,7 @@ class data extends ChangeNotifier {
       ],
       ratting: 4.2,
       number_of_ratting: 182,
-      price: 300000,
+      price: 100000,
        
     ),
     Product(
@@ -457,8 +458,8 @@ class data extends ChangeNotifier {
       ],
       ratting: 4.7,
       number_of_ratting: 57,
-      price: 300000,
-       
+      price: 135000,
+
     ),
     Product(
       id: 'id11',
@@ -504,7 +505,7 @@ class data extends ChangeNotifier {
       ],
       ratting: 5.0 ,
       number_of_ratting: 19 ,
-      price: 300000,
+      price: 130000,
        
     ),
     Product(
@@ -568,7 +569,7 @@ class data extends ChangeNotifier {
       ],
       ratting: 4.3 ,
       number_of_ratting: 1051 ,
-      price: 300000,
+      price: 230000,
        
     ),
     Product(
@@ -601,7 +602,7 @@ class data extends ChangeNotifier {
       ],
       ratting: 4.8 ,
       number_of_ratting: 124 ,
-      price: 300000,
+      price: 200000,
        
     ),
     Product(
@@ -665,7 +666,7 @@ class data extends ChangeNotifier {
       ],
       ratting: 4.9 ,
       number_of_ratting: 50 ,
-      price: 300000,
+      price: 180000,
        
     ),
 
@@ -754,7 +755,7 @@ class data extends ChangeNotifier {
       ],
       ratting: 5.0 ,
       number_of_ratting: 17 ,
-      price: 300000,
+      price: 150000,
        
     ),
     Product(
@@ -799,7 +800,7 @@ class data extends ChangeNotifier {
       ],
       ratting: 5.0 ,
       number_of_ratting: 2073 ,
-      price: 300000,
+      price: 110000,
        
     ),
     Product(
@@ -838,7 +839,7 @@ class data extends ChangeNotifier {
           'assets/images/healthcare/h2/h2_4.jpg',
         ],
         ratting: 4.9,
-        price: 300000,
+        price: 40000,
          
         number_of_ratting: 15,
     ),
@@ -871,7 +872,7 @@ class data extends ChangeNotifier {
           'assets/images/healthcare/h3/h3_5.jpg',
         ],
         ratting: 4.6,
-        price: 300000,
+        price: 60000,
          
         number_of_ratting: 57
     ),
@@ -937,7 +938,7 @@ class data extends ChangeNotifier {
           'assets/images/healthcare/h4/h4_5.jpg',
         ],
         ratting: 4.9,
-        price: 300000,
+        price: 160000,
          
         number_of_ratting: 10000
     ),
@@ -1006,7 +1007,7 @@ class data extends ChangeNotifier {
           'assets/images/healthcare/h5/h5_4.jpg',
         ],
         ratting: 5.0,
-        price: 300000,
+        price: 479000,
          
         number_of_ratting: 427
     ),
@@ -1068,7 +1069,7 @@ class data extends ChangeNotifier {
           'assets/images/tool/t1/t1_5.jpg',
         ],
         ratting: 5.0,
-        price: 300000,
+        price: 80000,
          
         number_of_ratting: 2000
     ),
@@ -1119,7 +1120,7 @@ class data extends ChangeNotifier {
           'assets/images/tool/t2/t2_6.jpg',
         ],
         ratting: 5.0,
-        price: 300000,
+        price: 73000,
          
         number_of_ratting: 474
     ),
@@ -1155,7 +1156,7 @@ class data extends ChangeNotifier {
           'assets/images/tool/t3/t3_6.jpg',
         ],
         ratting: 4.5,
-        price: 300000,
+        price: 60000,
          
         number_of_ratting: 157
     ),
@@ -1187,7 +1188,7 @@ class data extends ChangeNotifier {
           'assets/images/tool/t4/t4_4.jpg',
         ],
         ratting: 5.0,
-        price: 300000,
+        price: 58000,
          
         number_of_ratting: 10
     ),
@@ -1248,7 +1249,7 @@ class data extends ChangeNotifier {
           'assets/images/tool/t5/t5_4.jpg',
         ],
         ratting: 4.9,
-        price: 300000,
+        price: 40000,
          
         number_of_ratting: 328
     ),
