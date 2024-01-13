@@ -7,6 +7,8 @@ import 'package:shoppe_f/main.dart';
 import 'package:shoppe_f/screen/Product/product.dart';
 import 'package:slide_to_act/slide_to_act.dart';
 
+import '../Product/product_main.dart';
+
 class cart_main extends StatefulWidget{
   @override
   State<StatefulWidget> createState() => cart();
@@ -19,7 +21,13 @@ class cart extends State<cart_main>{
     return Scaffold(
       appBar: AppBar(
         leading: backbutton(),
-        title: Text('Giỏ hàng'),
+        title: Container(
+            child: Row(
+              children: [
+                Text('Cart'),
+                SvgPicture.asset('assets/icon/cart-minus.svg',width: 20,height: 20,color: Colors.white,)
+              ],
+        )),
         backgroundColor: Colors.deepOrange,
       ),
       body: Consumer<data>(
@@ -65,7 +73,7 @@ class cart extends State<cart_main>{
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Tong so tien: ",
+                          "Tổng số tiền: ",
                           style: TextStyle(
                             fontSize: 16,
                           ),
@@ -230,7 +238,7 @@ class cart_list_item extends State<item_cart>{
     Product Product_item = data().get_product_by_id(item.id);
     return GestureDetector(
             onTap: (){
-              print('opss');
+              Navigator.push(context, MaterialPageRoute(builder: (context) => product_item(item: data().get_product_by_id(Product_item.id))));
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -257,7 +265,7 @@ class cart_list_item extends State<item_cart>{
                               ),
                             ),
                             Text(
-                              item.price.toString(),
+                              'Giá: ${item.price.toString()}',
                               maxLines: 2,
                               style: TextStyle(
                                 fontSize: 14,
