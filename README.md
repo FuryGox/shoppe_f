@@ -1,6 +1,7 @@
 # shoppe_f
 
-A new Flutter project.
+A new Shopping android app with basic future like HomePage, Cart, Product detail,...
+It may have some issue due to lack of time for development
 
 ## Getting Started
 
