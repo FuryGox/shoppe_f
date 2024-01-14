@@ -36,7 +36,10 @@ class category_page extends State<category_main>{
       case 1:
         Navigator.pushNamed(context, '/receipt');
         break;
-    };
+      case 2:
+        Navigator.pushNamed(context, '/favorite');
+        break;
+    }
   }
   @override
   Widget build(BuildContext context) {

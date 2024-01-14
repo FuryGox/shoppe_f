@@ -45,7 +45,6 @@ class Product_main extends State<product_item>{
 
   @override
   Widget build(BuildContext context) {
-    bool like = data().getFavorite_state(item.id);
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: MyAppBar_Page(),

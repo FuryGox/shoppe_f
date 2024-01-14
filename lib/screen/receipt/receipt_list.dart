@@ -22,6 +22,7 @@ class ReceiptCard extends State<ReceiptItemCard>{
         break;
       case 2:
         Navigator.pushNamed(context, '/favorite');
+        break;
     }
   }
 

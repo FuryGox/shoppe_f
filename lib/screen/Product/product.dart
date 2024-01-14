@@ -1,6 +1,4 @@
 
-import '../../data.dart';
-
 class Product{
   String id;
   String name;

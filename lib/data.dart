@@ -1308,18 +1308,10 @@ class data extends ChangeNotifier {
 
   }
 
-  void setProduct(String id, Product item){
-    itemProductList[get_product_index_by_id(id)] = item;
-    notifyListeners();
-  }
-
   List<product_card> getFavoriteCard(){
     return itemProductList.where((a) => favorite_list.any((b) => b.id == a.id )).map((e) => product_card(id: e.id, imageUrl: e.image[0], title: e.name, price: e.price.toString(), rating: e.ratting.toString())).toList();
   }
 
-  bool getFavorite_state(String id){
-    return favorite_list.contains(id);
-  }
   void addToFavorite(Product item){
     favorite_list.add(item);
     notifyListeners();

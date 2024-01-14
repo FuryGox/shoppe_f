@@ -41,6 +41,7 @@ class home_screen extends  State<HomePage> {
         break;
       case 2:
         Navigator.pushNamed(context, '/favorite');
+        break;
     }
   }
 

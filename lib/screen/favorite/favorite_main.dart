@@ -23,6 +23,7 @@ class favorite_page extends State<favorite_main>{
         break;
       case 2:
         Navigator.pushNamed(context, '/favorite');
+        break;
     }
   }
 

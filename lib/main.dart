@@ -7,15 +7,16 @@ import 'package:shoppe_f/screen/favorite/favorite_main.dart';
 import 'package:shoppe_f/screen/home/home_screen.dart';
 import 'package:shoppe_f/screen/receipt/receipt_list.dart';
 
+///Entry point => MyApp();
 void main() {
   runApp(MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   data item_cart_data = data();
   MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -24,11 +25,11 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         home: HomePage(),
-        routes: {
-          '/home': (context) => HomePage(),
-          '/cart': (context) => cart_main(),
-          '/receipt': (context) => ReceiptItemCard(),
-          '/favorite': (context) => favorite_main(),
+        routes: {                                         //routes
+          '/home': (context) => HomePage(),               // /home      => HomePage(),
+          '/cart': (context) => cart_main(),              // /cart      => cart_main(),
+          '/receipt': (context) => ReceiptItemCard(),     // /receipt   => ReceiptItemCard(),
+          '/favorite': (context) => favorite_main(),      // /favorite  => favorite_main(),
         },
       ),
     );
